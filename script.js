@@ -29,3 +29,16 @@ for (let i = 0; i < totalRows; i++)
     // Append row to grid container
     grid.appendChild(row);
 }
+
+// Change the color of a square div when the mouse passes over it
+
+grid.addEventListener("mouseover", event => {
+
+    const squareDiv = event.target;
+    
+    // Discard elements that are not square divs
+    if (squareDiv.className === "square-div")
+    {
+        squareDiv.style.backgroundColor = "black";
+    }
+})
