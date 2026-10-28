@@ -23,6 +23,15 @@ body
     margin-bottom: 64px;
 }
 
+.header-container button
+{   
+    background-color: white;
+    padding: 16px 32px;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
 .grid-container
 {
     width: 800px;
