@@ -20,7 +20,6 @@ body
 {
     font-size: 32px;
     color: coral;
-    margin-bottom: 64px;
 }
 
 .header-container button
@@ -37,6 +36,7 @@ body
     width: 800px;
     height: 800px;
     border: 2px solid white;
+    margin-top: 64px;
 }
 
 .div-row
