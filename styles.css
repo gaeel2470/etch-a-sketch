@@ -1,8 +1,20 @@
-.grid-container
+.header-container, .grid-container
 {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.header-container h1
+{
+    font-size: 48px;
+    color: lightblue;
+}
+
+.header-container h2
+{
+    font-size: 32px;
+    color: coral;
 }
 
 .div-row
