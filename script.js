@@ -65,4 +65,20 @@ generateGridButton.addEventListener("click", () => {
         // Stop if user clicks cancel
         if (!gridSize) return;
     }
+
+    // Delete current grid
+    const currentGrid = document.querySelector(".grid-container");
+    currentGrid.remove();
+
+    // The whole container was also deleted, create a new one and append it before generating new grid
+    const newGrid = document.createElement("div");
+    
+    const mainContainer = document.querySelector(".main-container");
+    mainContainer.append(newGrid);
+
+    // Add class to keep CSS styles and match with generateGrid function
+    newGrid.classList.add("grid-container");
+
+    // Generate new grid 
+    generateGrid(+gridSize);
 })
