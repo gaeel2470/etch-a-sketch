@@ -26,24 +26,26 @@ function generateGrid(gridSize)
         // Append row to grid container
         grid.appendChild(row);
     }
+
+    // Change color of square divs when the mouse passes over them
+    grid.addEventListener("mouseover", colorSquareDiv)
 }
 
-// Generate "default" grid
-const defaultSize = 16;
-generateGrid(defaultSize);
-
-// Change the color of a square div when the mouse passes over it
-const grid = document.querySelector(".grid-container");
-grid.addEventListener("mouseover", event => {
-
+// Changes the color of square divs
+function colorSquareDiv(event)
+{
     const squareDiv = event.target;
-    
+
     // Discard elements that are not square divs
     if (squareDiv.className === "square-div")
     {
         squareDiv.style.backgroundColor = "black";
     }
-})
+}
+
+// Generate "default" grid
+const defaultSize = 16;
+generateGrid(defaultSize);
 
 // When clicked prompt the user for the size of the new grid, delete current grid and generate the new one
 const generateGridButton = document.querySelector(".generate-grid");
