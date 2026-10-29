@@ -31,7 +31,6 @@ for (let i = 0; i < totalRows; i++)
 }
 
 // Change the color of a square div when the mouse passes over it
-
 grid.addEventListener("mouseover", event => {
 
     const squareDiv = event.target;
@@ -40,5 +39,25 @@ grid.addEventListener("mouseover", event => {
     if (squareDiv.className === "square-div")
     {
         squareDiv.style.backgroundColor = "black";
+    }
+})
+
+// When clicked prompt the user for the size of the new grid, delete current grid and generate the new one
+const generateGridButton = document.querySelector(".generate-grid");
+generateGridButton.addEventListener("click", () => {
+
+    // Prompt user for size
+    let gridSize = prompt("Please enter the number of squares per side (Max is 100)", 16);
+
+    // Stop if user clicks cancel
+    if (!gridSize) return;
+
+    // Keep prompting until a valid value is entered
+    while (!Number.isInteger(+gridSize) || gridSize < 1 || gridSize > 100)
+    {
+        gridSize = prompt("Please enter a number between 1 and 100", 16);
+
+        // Stop if user clicks cancel
+        if (!gridSize) return;
     }
 })
