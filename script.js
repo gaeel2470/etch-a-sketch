@@ -1,36 +1,39 @@
-// Create 16x16 grid of square divs
-
-const grid = document.querySelector(".grid-container");
-
-// Number of rows and divs per row
-const totalRows = 16;
-const totalDivs = 16; 
-
-// Create a div container for each row
-for (let i = 0; i < totalRows; i++)
+// Generates a grid of square divs of given size
+function generateGrid(gridSize)
 {
-    const row = document.createElement("div");
+    const grid = document.querySelector(".grid-container");
 
-    // Create the divs for current row
-    for (let j = 0; j < totalDivs; j++)
+    // Create a div container for each row
+    for (let i = 0; i < gridSize; i++)
     {
-        const newDiv = document.createElement("div");
+        const row = document.createElement("div");
 
-        // Add a class to created div
-        newDiv.classList.add("square-div");
+        // Create the divs for current row
+        for (let j = 0; j < gridSize; j++)
+        {
+            const newDiv = document.createElement("div");
 
-        // Append div to current row container
-        row.appendChild(newDiv);
+            // Add a class to created div
+            newDiv.classList.add("square-div");
+
+            // Append div to current row container
+            row.appendChild(newDiv);
+        }
+
+        // Add a class to current row container
+        row.classList.add("div-row");
+
+        // Append row to grid container
+        grid.appendChild(row);
     }
-
-    // Add a class to current row container
-    row.classList.add("div-row");
-
-    // Append row to grid container
-    grid.appendChild(row);
 }
 
+// Generate "default" grid
+const defaultSize = 16;
+generateGrid(defaultSize);
+
 // Change the color of a square div when the mouse passes over it
+const grid = document.querySelector(".grid-container");
 grid.addEventListener("mouseover", event => {
 
     const squareDiv = event.target;
