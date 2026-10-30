@@ -3,6 +3,10 @@ function generateGrid(gridSize)
 {
     const grid = document.querySelector(".grid-container");
 
+    // Determine the dimensions of each square div to fit the 800x800 pixel grid
+    const gridDimensions = 800;
+    const divDimensions = gridDimensions / gridSize;
+
     // Create a div container for each row
     for (let i = 0; i < gridSize; i++)
     {
@@ -15,6 +19,10 @@ function generateGrid(gridSize)
 
             // Add a class to created div
             newDiv.classList.add("square-div");
+
+            // Change the dimensions of the square div
+            newDiv.style.width = `${divDimensions}px`;
+            newDiv.style.height = `${divDimensions}px`
 
             // Append div to current row container
             row.appendChild(newDiv);
