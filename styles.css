@@ -39,7 +39,7 @@ body
     margin-top: 64px;
 }
 
-.div-row
+.grid-row
 {
     display: flex;
 }
