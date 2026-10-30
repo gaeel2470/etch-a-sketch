@@ -60,8 +60,8 @@ function generateGrid(numberOfSquares)
     grid.addEventListener("mouseover", colorSquareDiv)
 }
 
-// Generate a default 20x20 grid
-const defaultSize = 20;
+// Generate a default 40x40 grid
+const defaultSize = 40;
 generateGrid(defaultSize);
 
 // When this button is clicked, prompt the user for the number of squares per side on the new grid
@@ -70,7 +70,7 @@ const generateGridButton = document.querySelector(".generate-grid-btn");
 generateGridButton.addEventListener("click", () => {
 
     // Prompt user for number of squares per side (Maximum will be 100 for performance sake)
-    let numberOfSquares = prompt("Please enter the number of squares per side (Max is 100)", 20);
+    let numberOfSquares = prompt("Please enter the number of squares per side (Max is 100)", 40);
 
     // Stop if user clicks cancel
     if (!numberOfSquares) return;
@@ -79,7 +79,7 @@ generateGridButton.addEventListener("click", () => {
     while (!Number.isInteger(+numberOfSquares) || numberOfSquares < 1 || numberOfSquares > 100)
     {   
         // Remind user about correct usage
-        numberOfSquares = prompt("Please enter a number between 1 and 100", 20);
+        numberOfSquares = prompt("Please enter a number between 1 and 100", 40);
 
         // Stop if user clicks cancel
         if (!numberOfSquares) return;
