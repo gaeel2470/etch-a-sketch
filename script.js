@@ -1,12 +1,18 @@
-// Changes the color of square divs
+// Changes the color of a square div using random rgb values
 function colorSquareDiv(event)
 {
     const squareDiv = event.target;
 
     // Discard elements that are not square divs
     if (squareDiv.className === "square-div")
-    {
-        squareDiv.style.backgroundColor = "black";
+    {   
+        // Get a random rgb value
+        const red = Math.floor(Math.random() * 256)
+        const green = Math.floor(Math.random() * 256)
+        const blue = Math.floor(Math.random() * 256)
+
+        // Color the square div
+        squareDiv.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
     }
 }
 
